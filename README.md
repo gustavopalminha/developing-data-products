@@ -1,4 +1,4 @@
-Coursera Developing Data Products - Project
+Coursera: Developing Data Products (Project)
 ===========================================
 
 
