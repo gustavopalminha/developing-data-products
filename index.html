@@ -1,78 +1,275 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Developing-data-products by gustavopalminha</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<head>
+  <title>Body Mass Index Calculator - BMIC</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Body Mass Index Calculator - BMIC">
+  <meta name="author" content="Gustavo Palminha">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
 
-  </head>
-  <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/gustavopalminha/developing-data-products">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/gustavopalminha/developing-data-products/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/gustavopalminha/developing-data-products/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
 
-    <div class="wrapper">
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Body Mass Index Calculator - BMIC</h1>
+    <h2>Calculator presentation</h2>
+    <p>Gustavo Palminha<br/>GIS Project Manager at Bio3.pt</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
 
-      <section>
-        <div id="title">
-          <h1>Developing-data-products</h1>
-          <p>Repo with the final MOOC project which is live at</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/gustavopalminha">gustavopalminha</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Intro</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Inside this presentation:</p>
 
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<ol>
+<li>Whats the Body Mass Index (BMI).</li>
+<li>Calculating BMI - practical example.</li>
+<li>Classifying the BMI output.</li>
+<li>Reviewing the lesson learned! </li>
+<li>Final notes.</li>
+</ol>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<slide class="class" id="slide1" style="background:;">
+  <hgroup>
+    <h2>Whats the Body Mass Index (BMI)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The body mass index (BMI), or Quetelet index, is a measure of relative weight based on an individual&#39;s mass and height.</p>
+
+<p>Devised between 1830 and 1850 by the Belgian polymath Adolphe Quetelet during the course of developing &quot;social physics&quot;,[2] it is defined as the individual&#39;s body mass divided by the square of their height with the value universally being given in units of kg/m2.</p>
+
+<p>The Quetelet Index instrument reformulation, instrument name title the Body Mass Index. The Quetelet or the Body Mass Index Universal Standard Metric Systems Units of Measurement, kilograms and meter square height, length, weight. The Quetelet or the Body Mass Index United States Units of Measurements standards of physical quantity height, length, and weight, inches, feet, yards, and pounds.</p>
+
+<p>Source: <a href="http://en.wikipedia.org/wiki/Body_mass_index">http://en.wikipedia.org/wiki/Body_mass_index</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="slide2" style="background:;">
+  <hgroup>
+    <h2>Calculating BMI - practical example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Considering 1.8m of hight and 80kg of weight it returns... </p>
+
+<pre><code>## [1] 24.69
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>which is calculated using the folowing r function:</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<pre><code class="r">calculateBMI &lt;- function(h, w){
+    result &lt;- w / (h * h)
+}
+</code></pre>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<slide class="class" id="slide3" style="background:;">
+  <hgroup>
+    <h2>Classifying the BMI output</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Each value coresponds a respective category.</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<table><thead>
+<tr>
+<th>Category</th>
+<th>BMI range kg/m2</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Very severely underweight</td>
+<td>less than 15</td>
+</tr>
+<tr>
+<td>Severely underweight</td>
+<td>from 15.0 to 16.0</td>
+</tr>
+<tr>
+<td>Underweight</td>
+<td>from 16.0 to 18.5</td>
+</tr>
+<tr>
+<td>Normal (healthy weight)</td>
+<td>from 18.5 to 25</td>
+</tr>
+<tr>
+<td>Overweight</td>
+<td>from 25 to 30</td>
+</tr>
+<tr>
+<td>Obese Class I (Moderately obese)</td>
+<td>from 30 to 35</td>
+</tr>
+<tr>
+<td>Obese Class II (Severely obese)</td>
+<td>from 35 to 40</td>
+</tr>
+<tr>
+<td>Obese Class III (Very severely obese)</td>
+<td>over 40</td>
+</tr>
+</tbody></table>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+<slide class="class" id="slide4" style="background:;">
+  <hgroup>
+    <h2>Reviewing the lesson learned!</h2>
+  </hgroup>
+  <article data-timings="">
     
-  </body>
-</html>
+<div class="quiz quiz-single well class">
+  <p>So considering the returned value...</p>
+
+<pre><code>## [1] 24.69
+</code></pre>
+
+<p>What category it falls?</p>
+
+<ol>
+<li>Very severely underweight</li>
+<li>Severely underweight</li>
+<li>Underweight </li>
+<li><em>Normal (healthy weight)</em></li>
+<li>Overweight</li>
+<li>Obese Class II (Severely obese)</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>The correct category has a BMI range from 18.5 to 25 kg/m2.</p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="slide6" style="background:;">
+  <hgroup>
+    <h2>Final notes</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This index is just a way to quantify ones physical body mass and there are other methods for measuring it.</p>
+
+<p>Above all.... thanks for reviewing the assignment. ;)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="slide7" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Intro'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Whats the Body Mass Index (BMI)'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Calculating BMI - practical example'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Classifying the BMI output'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Reviewing the lesson learned!'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Final notes'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title=''>
+         7
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

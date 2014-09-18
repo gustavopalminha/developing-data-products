@@ -1,0 +1,106 @@
+---
+title       : Body Mass Index Calculator - BMIC
+subtitle    : Calculator presentation
+author      : Gustavo Palminha
+job         : GIS Project Manager at Bio3.pt
+framework   : io2012   # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [quiz]        # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Intro
+
+Inside this presentation:
+
+1. Whats the Body Mass Index (BMI).
+2. Calculating BMI - practical example.
+3. Classifying the BMI output.
+4. Reviewing the lesson learned! 
+5. Final notes.
+
+--- .class #slide1 
+
+##  Whats the Body Mass Index (BMI)
+
+The body mass index (BMI), or Quetelet index, is a measure of relative weight based on an individual's mass and height.
+
+Devised between 1830 and 1850 by the Belgian polymath Adolphe Quetelet during the course of developing "social physics",[2] it is defined as the individual's body mass divided by the square of their height with the value universally being given in units of kg/m2.
+
+The Quetelet Index instrument reformulation, instrument name title the Body Mass Index. The Quetelet or the Body Mass Index Universal Standard Metric Systems Units of Measurement, kilograms and meter square height, length, weight. The Quetelet or the Body Mass Index United States Units of Measurements standards of physical quantity height, length, and weight, inches, feet, yards, and pounds.
+
+Source: http://en.wikipedia.org/wiki/Body_mass_index
+
+--- .class #slide2 
+
+## Calculating BMI - practical example
+
+Considering 1.8m of hight and 80kg of weight it returns... 
+```{r echo=FALSE}
+calculateBMI <- function(h, w){
+	result <- w / (h * h)
+}
+
+bmiTest <- calculateBMI(1.8,80)
+bmiTest
+
+```
+
+which is calculated using the folowing r function:
+```{r}
+calculateBMI <- function(h, w){
+	result <- w / (h * h)
+}
+```
+
+--- .class #slide3 
+
+## Classifying the BMI output
+
+Each value coresponds a respective category.
+
+		Category 			  |	BMI range kg/m2 	   
+--------------------------------------|------------------------
+Very severely underweight		  | 	less than 15	   
+Severely underweight			  | 	from 15.0 to 16.0    
+Underweight 				  |	from 16.0 to 18.5    
+Normal (healthy weight) 		  |	from 18.5 to 25	   
+Overweight					  | 	from 25 to 30 	   
+Obese Class I (Moderately obese)	  | 	from 30 to 35 	   
+Obese Class II (Severely obese) 	  |	from 35 to 40 	   
+Obese Class III (Very severely obese) |	over 40 	    	   
+
+
+--- .class #slide4 &radio
+
+## Reviewing the lesson learned! 
+
+So considering the returned value...
+```{r echo=FALSE}
+bmiTest
+```
+
+What category it falls?
+
+1. Very severely underweight
+2. Severely underweight
+3. Underweight 
+4. _Normal (healthy weight)_
+6. Overweight
+7. Obese Class II (Severely obese)
+
+*** .hint 
+The correct category has a BMI range from 18.5 to 25 kg/m2.
+
+
+--- .class #slide6
+
+## Final notes
+
+This index is just a way to quantify ones physical body mass and there are other methods for measuring it.
+
+Above all.... thanks for reviewing the assignment. ;)
+
+--- .class #slide7 
