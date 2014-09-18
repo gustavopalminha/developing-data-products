@@ -15,7 +15,7 @@ knit        : slidify::knit2slides
 
 Inside this presentation:
 
-1. Whats the Body Mass Index (BMI).
+1. What's the Body Mass Index (BMI).
 2. Calculating BMI - practical example.
 3. Classifying the BMI output.
 4. Reviewing the lesson learned! 
@@ -23,7 +23,7 @@ Inside this presentation:
 
 --- .class #slide1 
 
-##  Whats the Body Mass Index (BMI)
+##  What's the Body Mass Index (BMI)
 
 The body mass index (BMI), or Quetelet index, is a measure of relative weight based on an individual's mass and height.
 
@@ -48,7 +48,7 @@ bmiTest
 
 ```
 
-which is calculated using the folowing r function:
+which is calculated using the following r function:
 ```{r}
 calculateBMI <- function(h, w){
 	result <- w / (h * h)
@@ -59,7 +59,7 @@ calculateBMI <- function(h, w){
 
 ## Classifying the BMI output
 
-Each value coresponds a respective category.
+Each value corresponds a respective category.
 
 		Category 			  |	BMI range kg/m2 	   
 --------------------------------------|------------------------
